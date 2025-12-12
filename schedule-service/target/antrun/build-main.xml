@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="maven-antrun-" default="main">
+  <target name="main">
+    <delete failonerror="false" dir="E:\stud\Разработка клиент-серверных п\lab 3\schedule-service\target/generated-sources/openapi-data/src/test" />
+    <delete failonerror="false" dir="E:\stud\Разработка клиент-серверных п\lab 3\schedule-service\target/generated-sources/openapi-report/src/test" />
+  </target>
+</project>

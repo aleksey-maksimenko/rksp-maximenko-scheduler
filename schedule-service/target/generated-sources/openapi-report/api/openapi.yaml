@@ -1,0 +1,43 @@
+openapi: 3.0.3
+info:
+  title: Report Service API
+  version: 1.0.0
+servers:
+- url: /
+paths:
+  /events:
+    post:
+      operationId: writeEvents
+      requestBody:
+        content:
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/UserEvent'
+              type: array
+        required: true
+      responses:
+        "201":
+          description: Created
+      tags:
+      - ReportService
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+components:
+  schemas:
+    UserEvent:
+      example:
+        eventTime: 2000-01-23T04:56:07.000+00:00
+        eventType: eventType
+      properties:
+        eventType:
+          type: string
+        eventTime:
+          format: date-time
+          type: string
+      required:
+      - eventTime
+      - eventType
+      type: object
+

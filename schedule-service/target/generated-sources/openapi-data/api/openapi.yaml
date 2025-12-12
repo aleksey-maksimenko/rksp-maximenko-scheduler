@@ -1,0 +1,40 @@
+openapi: 3.0.3
+info:
+  title: Data Service API
+  version: 1.0.0
+servers:
+- url: /
+paths:
+  /events:
+    get:
+      operationId: getEvents
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/UserEvent'
+                type: array
+          description: OK
+      tags:
+      - DataService
+      x-accepts:
+      - application/json
+components:
+  schemas:
+    UserEvent:
+      example:
+        eventTime: 2000-01-23T04:56:07.000+00:00
+        eventType: eventType
+      properties:
+        eventType:
+          type: string
+        eventTime:
+          format: date-time
+          type: string
+      required:
+      - eventTime
+      - eventType
+      type: object
+
